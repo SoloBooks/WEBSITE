@@ -17,7 +17,7 @@
   --font-mono: 'SF Mono', 'JetBrains Mono', monospace;
 
   --max-width: 1200px;             /* Extended slightly for a wider corporate presence */
-  --radius: 0px;                   /* Strict PwC rule: 100% sharp corners, zero rounded borders */
+  --radius: 0px;                    /* Strict PwC rule: 100% sharp corners, zero rounded borders */
 }
 
 /* Load Inter with full weight spectrum */
@@ -28,7 +28,9 @@
   border-radius: var(--radius) !important; /* Forces total boxy nature across all components */
 }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+}
 
 body {
   margin: 0;
@@ -38,6 +40,7 @@ body {
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Prevent horizontal scroll micro-bugs on mobile */
 }
 
 .container {
@@ -59,12 +62,12 @@ h1, h2, h3 {
 
 h1 { 
   font-weight: 800; 
-  font-size: clamp(2.8rem, 6vw, 4.2rem); 
+  font-size: clamp(2.2rem, 6vw, 4.2rem); /* Adjusted minimum clamp bounds to prevent heading spillover on narrow phones */
 }
 
 h2 { 
   font-weight: 700; 
-  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-size: clamp(1.6rem, 4vw, 2.6rem); /* Scaled down base mobile threshold */
   border-left: 4px solid var(--color-ledger-green); /* PwC vertical structural line accent */
   padding-left: 16px;
 }
@@ -104,7 +107,7 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100; /* Bumped to step completely clear of interactive map layers or system widgets */
   background: #ffffff;
   border-bottom: 2px solid var(--color-ink); /* Authoritative thick baseline divider */
 }
@@ -176,20 +179,28 @@ a {
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  align-items: center;
+  gap: 4px;
   width: 40px;
   height: 40px;
   background: none;
   border: 1px solid var(--color-ink);
   cursor: pointer;
+  padding: 0;
 }
 
 .nav-toggle span {
   display: block;
   height: 2px;
+  width: 20px;
   background: var(--color-ink);
-  margin: 0 10px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
+/* Open states to transform menu bar into an 'X' close indicator via JS utility class */
+.nav-toggle.is-active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle.is-active span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 /* ==========================================================================
    Buttons (Sharp Box Nature)
@@ -203,6 +214,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   cursor: pointer;
+  text-align: center;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -249,7 +261,12 @@ a {
   margin-top: 1.5em;
 }
 
-.hero-actions { margin-top: 2.5em; }
+.hero-actions { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 2.5em; 
+}
 
 .hero-ledger {
   margin: 80px auto 0;
@@ -263,8 +280,10 @@ a {
 
 .ledger-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   background: var(--color-cream-card);
   padding: 20px 32px;
   font-family: var(--font-mono);
@@ -279,6 +298,7 @@ a {
   letter-spacing: 0.08em;
   font-weight: 700;
   border: 1px solid transparent;
+  white-space: nowrap;
 }
 
 .status-done { background: #e6f7ed; color: #1f7a42; border-color: rgba(31,122,66,0.2); }
@@ -305,6 +325,7 @@ a {
 
 .about-stats {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Enables seamless responsive downscaling before hitting block breakpoint rules */
   gap: 1px;
   background: var(--color-ledger-line); /* Clean architectural cross-grid line split */
   border: 1px solid var(--color-ledger-line);
@@ -359,7 +380,6 @@ a {
 .service-card h3 { margin-bottom: 0.6em; }
 .service-card p { margin: 0; font-size: 1rem; color: var(--color-text-muted); }
 
-/* Legal Section Layout */
 /* ==========================================================================
    Legal & Compliance Section Layout (Enhanced)
    ========================================================================== */
@@ -468,6 +488,7 @@ a {
   border: 1px solid var(--color-ink); /* Authoritative corporate border inputs */
   background: #ffffff;
   color: var(--color-ink);
+  width: 100%; /* Prevents text elements bursting outside card layout dimensions on narrow touch monitors */
   transition: all 0.2s ease;
 }
 
@@ -512,18 +533,79 @@ a {
    Responsive Viewports
    ========================================================================== */
 @media (max-width: 960px) {
+  .container {
+    padding: 0 24px; /* Slightly tighter container gutters on tablet screens */
+  }
   .about-grid, .legal-grid, .contact-grid {
     grid-template-columns: 1fr;
-    gap: 56px;
+    gap: 48px;
   }
-  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 24px;
+  }
+  .hero {
+    padding: 80px 0 60px; /* Reduced vertical padding block space on small interfaces */
+  }
 }
 
 @media (max-width: 640px) {
-  .nav { display: none; }
-  .service-grid { grid-template-columns: 1fr; }
-  .btn-ghost { margin-left: 0; margin-top: 16px; display: inline-block; }
-  .container { padding: 0 24px; }
+  .nav-toggle { 
+    display: flex; /* Activate hamburger trigger */
+  }
+
+  /* Structural transformation to morph the navbar link strip into an authoritative vertical dropdown */
+  .nav { 
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 24px 32px;
+    gap: 20px;
+    border-bottom: 2px solid var(--color-ink);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+
+  /* Utility class to be toggled using simple javascript (`nav.classList.toggle('is-open')`) */
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 4px 0;
+    width: 100%;
+  }
+
+  .service-grid { 
+    grid-template-columns: 1fr; 
+    margin-top: 40px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%; /* Force actions to clear layout row boundaries cleanly side by side */
+  }
+
+  .btn-ghost { 
+    margin-left: 0; 
+  }
+
+  .ledger-row {
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
 }
 
 /* ==========================================================================
