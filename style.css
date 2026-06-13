@@ -525,3 +525,32 @@ a {
   .btn-ghost { margin-left: 0; margin-top: 16px; display: inline-block; }
   .container { padding: 0 24px; }
 }
+
+/* ==========================================================================
+   Premium Text Cycling Animation
+   ========================================================================== */
+.animated-text {
+  color: var(--color-ledger-green); /* Forces the animating words to be your brand orange */
+  position: relative;
+  white-space: nowrap;
+  border-right: 3px solid var(--color-ink); /* The typing cursor */
+  animation: 
+    typing 8s steps(4, end) infinite,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  0%, 100% { content: "ledger."; width: 100%; }
+  20% { content: "ledger."; width: 100%; }
+  25% { content: "VAT prep."; }
+  45% { content: "VAT prep."; }
+  50% { content: "payroll."; }
+  70% { content: "payroll."; }
+  75% { content: "back office."; }
+  95% { content: "back office."; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--color-ink); }
+}
