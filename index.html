@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOLO BOOKS</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Inline utility class to split logo styling via code text */
+    .brand-accent { color: var(--color-ledger-green); }
+    .navbar-logo { height: 32px; width: auto; display: block; }
+  </style>
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand">
-      <a href="index.html" class="logo">
-    <img src="LOGO.png" alt="Solo Books Logo" class="navbar-logo">
-</a>
-        <span class="brand-name">SOLO BOOKS</span>
+      <a href="index.html" class="brand">
+        <img src="LOGO.png" alt="Solo Books Logo" class="navbar-logo">
+        <span class="brand-name">solo<span class="brand-accent">books</span></span>
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#about">About</a>
@@ -30,7 +33,6 @@
 
   <main id="top">
 
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <p class="eyebrow">ICB Level 3 Certified Bookkeeper · Ireland</p>
@@ -52,7 +54,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section about">
       <div class="container about-grid">
         <div class="about-text">
@@ -86,7 +87,6 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="section services">
       <div class="container">
         <p class="eyebrow">Services</p>
@@ -109,7 +109,7 @@
             <h3>Accounts Preparation</h3>
             <p>Trial balances and management accounts prepared and handed to your accountant for year-end filing.</p>
           </article>
-    
+          
           <article class="service-card">
             <h3>Bookkeeping Set-Up</h3>
             <p>Chart of accounts, software set-up (Xero, Sage, QuickBooks, Surf Accounts) and process design for new businesses.</p>
@@ -118,7 +118,6 @@
       </div>
     </section>
 
-    <!-- LEGAL -->
     <section id="legal" class="section legal">
       <div class="container legal-grid">
         <div>
@@ -156,7 +155,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section contact">
       <div class="container contact-grid">
         <div class="contact-text">
@@ -187,7 +185,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Ledger &amp; Co. Bookkeeping. ICB Level 3. Based in Ireland.</p>
+      <p>&copy; <span id="year"></span> Solo Books Bookkeeping. ICB Level 3. Based in Ireland.</p>
       <p class="footer-sub">Bookkeeping services provided are subject to a signed letter of engagement and do not constitute tax or legal advice.</p>
     </div>
   </footer>
