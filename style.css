@@ -636,3 +636,19 @@ a {
   from, to { border-color: transparent }
   50% { border-color: var(--color-ink); }
 }
+
+/* Emergency visibility override */
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 101;
+  }
+  .nav-toggle span {
+    width: 20px !important;
+    height: 2px !important;
+    background-color: #1c2024 !important; /* Command Charcoal color */
+    display: block !important;
+  }
+}
