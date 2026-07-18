@@ -1,263 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IE">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solo Books </title>
+  <title>Ledgerly — Bookkeeping for Sole Traders &amp; Small Irish Companies</title>
+  <meta name="description" content="ICB Level 3 certified bookkeeping for sole traders and small Irish limited companies. VAT returns, payroll, CRO compliance and more. Based in Ireland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-  <!-- HEADER NAVIGATION -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#" class="brand">
-        <!-- Dual-Colour Identity Split -->
-        <span class="brand-name">solo <span class="brand-accent">books</span></span>
+      <a href="#top" class="brand" aria-label="Ledgerly home">
+        <img src="logo.jpeg" alt="Ledgerly logo" class="brand-logo">
       </a>
-      
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#legal">Compliance</a>
+        <a href="#who-we-help">Who We Help</a>
+        <a href="#legal">Legal</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <button class="nav-toggle" aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
-    <!-- HERO SECTION -->
+  <main id="top">
+
+    <!-- HERO -->
     <section class="hero">
+      <div class="hero-blob" aria-hidden="true"></div>
       <div class="container hero-inner">
-        <span class="eyebrow">The Reliable Subcontracting Partner for Accountancy Firms</span>
-        <h1>We clear your backlogs.
-          <span class="animated-text">You scale your practice.</span></h1>
-        <p class="hero-lead"> The premium, white-label bookkeeping and payroll support built exclusively for busy Irish accountants, tax practitioners, and established practices. We handle the heavy lifting—from meticulous data entry and bank reconciliations to ROS-ready payroll and VAT preparation. We deliver pristine, audit-ready files back to your firm, allowing you to focus on high-value client advisory. Fully qualified, entirely confidential.</p>
+        <p class="eyebrow">ICB Level 3 Certified · Sole Traders &amp; Irish Ltd Companies</p>
+        <h1>Less time on receipts.<br>More time on your business.</h1>
+        <p class="hero-lead">
+          Ledgerly takes care of the numbers — VAT, payroll, CRO filings and day-to-day bookkeeping —
+          so you can focus on running your business, not chasing Revenue deadlines.
+        </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Onboard Now</a>
-          <a href="#services" class="btn btn-ghost">Our Services</a>
+          <a href="#contact" class="btn btn-primary">Get a free consultation</a>
+          <a href="#services" class="btn btn-ghost">View services</a>
         </div>
       </div>
-
-      <!-- Live-Ledger System Status Simulation Grid -->
-      <div class="hero-ledger">
-        <div class="ledger-row">
-          <span>Vat Return</span>
-          <span class="status status-done">FILED</span>
-        </div>
-        <div class="ledger-row">
-          <span>BANK RECONICILATION</span>
-          <span class="status status-progress">DONE</span>
-        </div>
-        <div class="ledger-row">
-          <span>PAYSLIPS</span>
-          <span class="status status-pending">Generated</span>
+      <div class="container">
+        <div class="hero-ledger" aria-hidden="true">
+          <div class="ledger-row"><span>VAT3 Return — Q2 (Sole Trader)</span><span class="status status-done">Filed</span></div>
+          <div class="ledger-row"><span>Annual Return — B1 (Ltd Co.)</span><span class="status status-pending">Due 28 Jul</span></div>
+          <div class="ledger-row"><span>Payroll — June (3 employees)</span><span class="status status-done">Processed</span></div>
+          <div class="ledger-row"><span>Management Accounts — Q2</span><span class="status status-progress">In progress</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section">
+    <!-- ABOUT -->
+    <section id="about" class="section about">
       <div class="container about-grid">
-        <div>
-          <span class="eyebrow">Why do you need us?</span>
-          <h2>The reliable remote resource your practice can scale with</h2>
-          <p>Modern Irish accounting firms are drowning in data entry, high staffing costs, and constant tight deadlines. Solo Books eliminates the bottleneck by acting as your firm’s dedicated external processing team. We handle the day-to-day transaction processing, structure cloud ledger infrastructure from day one, and deliver a seamless, fully reconciled handover framework tailored to your firm's standards.</p>
-          <p>Your firm's overflow work is always processed by a certified ICB Level 3 professional with specialized IPASS training.</p>
+        <div class="about-text">
+          <p class="eyebrow">About Us</p>
+          <h2>Your books, done properly — without the big firm price tag.</h2>
+          <p>
+            Ledgerly is an ICB Level 3 certified solo bookkeeping practice working exclusively with
+            sole traders and small Irish limited companies. We understand the pressures facing small
+            Irish businesses — tight margins, Revenue deadlines, CRO obligations — and we make sure
+            none of that falls through the cracks.
+          </p>
+          <p>
+            No account managers, no hand-offs, no call centres. When you contact Ledgerly, you speak
+            directly to the person handling your books. We work around your schedule, explain everything
+            in plain English, and keep you in control of your finances year-round.
+          </p>
+          <p>
+            Whether you're a tradesperson invoicing clients, a freelancer juggling multiple contracts,
+            or a director of a small Irish Ltd managing payroll and CRO returns — Ledgerly is built for you.
+          </p>
         </div>
-        
         <div class="about-stats">
           <div class="stat">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Solo Practioner & Small Practice Focused</span>
+            <span class="stat-number">ICB L3</span>
+            <span class="stat-label">Qualified &amp; Certified</span>
           </div>
           <div class="stat">
-            <span class="stat-number">&lt; 24h</span>
-            <span class="stat-label">Response Times</span>
+            <span class="stat-number">Revenue</span>
+            <span class="stat-label">VAT · PAYE · RCT · PRSI Ready</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">CRO</span>
+            <span class="stat-label">Ltd Company Annual Returns</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1:1</span>
+            <span class="stat-label">You always deal with the same person</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="section">
+    <!-- WHO WE HELP -->
+    <section id="who-we-help" class="section who">
       <div class="container">
-        <span class="eyebrow">Our Services</span>
-        <h2>You focus on your business. We'll handle the rest.</h2>
-        
-        <div class="service-grid">
-          <div class="service-card">
-            <h3>White-Label Bookkeeping</h3>
-            <p>We process raw bank feeds, reconcile statements, and manage daily transaction tracking using Xero or QuickBooks, delivering flawless digital records straight to your senior team.</p>
+        <p class="eyebrow">Who We Help</p>
+        <h2>Built for small Irish businesses</h2>
+        <div class="who-grid">
+          <div class="who-card">
+            <div class="who-icon">🔨</div>
+            <h3>Sole Traders &amp; Tradespeople</h3>
+            <p>Electricians, plumbers, builders, cleaners, couriers — if you're self-employed and invoicing clients, Ledgerly keeps your records straight for your Form 11 and any VAT obligations.</p>
+            <ul class="who-list">
+              <li>Income &amp; expense tracking</li>
+              <li>VAT registration &amp; returns</li>
+              <li>RCT if you work in construction</li>
+              <li>Records ready for your accountant's Form 11</li>
+            </ul>
           </div>
-          <div class="service-card">
-            <h3>Precision Ledger Cleanup</h3>
-            <p>Have a client drop a box of messy, un-reconciled receipts? We perform intensive historical catch-up work, clearing out suspense accounts and tagging expenses to keep you on schedule.</p>
+          <div class="who-card">
+            <div class="who-icon">💻</div>
+            <h3>Freelancers &amp; Contractors</h3>
+            <p>Designers, developers, consultants and creatives — we manage your invoicing records, expenses and VAT so you stay compliant whether you're on one contract or ten.</p>
+            <ul class="who-list">
+              <li>Invoice &amp; receipt management</li>
+              <li>Bi-monthly VAT3 returns</li>
+              <li>Subcontractor RCT if applicable</li>
+              <li>Monthly profit &amp; loss summaries</li>
+            </ul>
           </div>
-          <div class="service-card">
-            <h3>Irish VAT Support</h3>
-            <p>Immaculate organization, coding, and checking of periodic VAT transactions according to Irish Revenue guidelines, preparing pristine VAT3 working papers for your firm to sign off.</p>
-          </div>
-           <div class="service-card">
-            <h3>ROS-Ready Payroll</h3>
-            <p>Structured payroll processing following strict PAYE Modernisation standards. We calculate PRSI/USC variables, leaving payroll logs perfectly optimized and ready for your final ROS filing.</p>
-          </div>
-           <div class="service-card">
-            <h3>Management Accounts Prep</h3>
-            <p>We build clean draft trial balances, profit and loss logs, and balance sheets so your accountants can jump straight into strategic tax planning without wasting time fixing errors.</p>
-          </div>
-           <div class="service-card">
-            <h3>Cloud Software Migration</h3>
-            <p>We assist your practice by onboarding your legacy desktop clients onto modern cloud solutions like Xero, handling the basic data mapping and initial chart of accounts setup.</p>
+          <div class="who-card">
+            <div class="who-icon">🏢</div>
+            <h3>Small Irish Ltd Companies</h3>
+            <p>If you're a director of a small limited company — a family business, a startup or a professional services firm — Ledgerly handles the ongoing bookkeeping so your accountant only has to focus on year-end.</p>
+            <ul class="who-list">
+              <li>Monthly management accounts</li>
+              <li>Director &amp; employee payroll</li>
+              <li>VAT3 &amp; employer PAYE returns</li>
+              <li>CRO annual return (B1) support</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-        <section id="services" class="section">
+    <!-- SERVICES -->
+    <section id="services" class="section services">
       <div class="container">
-        <span class="eyebrow">Who we help</span>
-        <h2>Our Clients Types</h2>
-        
+        <p class="eyebrow">Services</p>
+        <h2>Everything your books need, nothing you don't</h2>
         <div class="service-grid">
-          <div class="service-card">
-            <h3>Sole Practitioners</h3>
-            <p>Overloaded local accountants who need a dependable, qualified freelancer to take over routine bookkeeping so they can take on more profitable advisory work.</p>
-          </div>
-          <div class="service-card">
-            <h3>Established Accountancy Firms</h3>
-            <p>Providing seamless, external bureau support to mid-sized firms looking to scale their client capacity without the overhead of hiring full-time staff.</p>
-          </div>
-          <div class="service-card">
-            <h3>Freelancers</h3>
-            <p>  Simple financial management for consultants, creatives, and
-                self-employed professionals.</p>
-          </div>
-           <div class="service-card">
-            <h3> Busy Bookkeeping Practices</h3>
-            <p>Freelance backup support during peak bi-monthly VAT cycles or when your internal team hits a processing bottleneck.</p>
-          </div>
-           <div class="service-card">
-            <h3>Payroll Bureaus</h3>
-            <p> Specialized, IPASS-aligned support to handle payroll processing overflows under tight weekly or monthly PAYE deadlines.</p>
-          </div>
+          <article class="service-card">
+            <div class="service-icon">📒</div>
+            <h3>Day-to-Day Bookkeeping</h3>
+            <p>Sales and purchase ledgers, bank reconciliations, and organised records — updated weekly or monthly so you're never scrambling before a deadline.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">🧾</div>
+            <h3>VAT Returns (VAT3)</h3>
+            <p>Bi-monthly VAT3 preparation and submission to Revenue online. We also handle VAT registration if you've hit the threshold or want to register voluntarily.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>Payroll &amp; PAYE</h3>
+            <p>Weekly, fortnightly or monthly payroll for employees and directors. Payslips, PAYE/PRSI/USC submissions to Revenue, and P30 returns all handled for you.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Management Accounts</h3>
+            <p>Monthly or quarterly profit &amp; loss and balance sheet reports so you know exactly where your business stands — not just at year-end.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">🏗️</div>
+            <h3>RCT Returns</h3>
+            <p>Relevant Contracts Tax processing for sole traders and Ltd companies working as principal contractors or subcontractors in construction, forestry or meat processing.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">🗂️</div>
+            <h3>Year-End Prep &amp; CRO</h3>
+            <p>We prepare your books to trial balance so your accountant can file your Corporation Tax (CT1) or income tax return with minimal fuss. CRO B1 annual return support for Ltd companies included.</p>
+          </article>
         </div>
       </div>
     </section>
 
-   
-    <!-- COMPLIANCE / LEGAL SECTION -->
-   <section id="legal" class="section">
+    <!-- LEGAL -->
+    <section id="legal" class="section legal">
       <div class="container legal-grid">
-        <div class="legal-header-block">
-          <span class="eyebrow">Compliance</span>
-          <h2>Regulated and Insured</h2>
-          <p>Solo Books is a fully compliant, independent B2B bookkeeping service. We hold an active Public Practice Licence from the Institute of Certified Bookkeepers (ICB) and carry comprehensive Professional Indemnity Insurance (PII). To ensure strict GDPR compliance and total data security, all remote files and ledger workflows are accessed and hosted on secure cloud servers located entirely within the Republic of Ireland.</p>
+        <div>
+          <p class="eyebrow">Legal &amp; Compliance</p>
+          <h2>Professional, compliant and fully insured.</h2>
+          <p>
+            Ledgerly operates in accordance with the Institute of Certified Bookkeepers (ICB) code of
+            professional conduct. We comply with Irish anti-money laundering legislation under the
+            Criminal Justice (Money Laundering and Terrorist Financing) Acts 2010–2021, and all client
+            data is held securely under GDPR and the Data Protection Acts 1988–2018.
+          </p>
+          <p>
+            All Revenue-facing submissions — VAT3, PAYE, RCT — are made via ROS (Revenue Online Service).
+            Records are retained for a minimum of six years in line with Revenue requirements.
+            A signed letter of engagement is issued before any work begins, so you always know
+            exactly what's covered and what it costs.
+          </p>
         </div>
-        
-        <div class="legal-framework-cards">
-          <div class="compliance-card">
-            <div class="compliance-meta">
-              <span class="compliance-tag">REGULATION & Qualification</span>
-              <span class="compliance-status">// TRUST</span>
-            </div>
-            <h3>Professional Qualificationse </h3>
-            <p> Certified ICB Level 3 standard operations combined with practical IPASS training. We follow strict double-entry accounting principles, maintain Professional Indemnity Insurance, and utilize rigid ledger verification metrics.</p>
+        <dl class="legal-list">
+          <div class="legal-item">
+            <dt>Professional Body</dt>
+            <dd>Institute of Certified Bookkeepers (ICB) — Level 3 Diploma in Bookkeeping</dd>
           </div>
-
-          <div class="compliance-card">
-            <div class="compliance-meta">
-              <span class="compliance-tag">DATA THAT STAYS IN IRELAND</span>
-              <span class="compliance-status">// GDPR</span>
-            </div>
-            <h3>Confidentiality & Integrity</h3>
-            <p>All client data, workflows, and remote ledger instances are accessed, processed, and securely hosted on local cloud servers situated entirely within the Republic of Ireland. We adhere to strict GDPR protocols and maintain a policy of zero offshore outsourcing, ensuring your practice retains a localized, secure, and completely audit-ready compliance trail..</p>
+          <div class="legal-item">
+            <dt>Revenue Compliance</dt>
+            <dd>Registered for ROS; VAT3, PAYE, RCT and CT1 prep all handled online</dd>
           </div>
-        </div>
+          <div class="legal-item">
+            <dt>CRO Obligations</dt>
+            <dd>Annual return (B1) support for Irish Ltd companies; filed via core.ie</dd>
+          </div>
+          <div class="legal-item">
+            <dt>Anti-Money Laundering</dt>
+            <dd>Compliant with the Criminal Justice (Money Laundering) Acts 2010–2021</dd>
+          </div>
+          <div class="legal-item">
+            <dt>Data Protection</dt>
+            <dd>Client data processed under GDPR; six-year retention per Revenue rules</dd>
+          </div>
+          <div class="legal-item">
+            <dt>Professional Indemnity</dt>
+            <dd>PI insurance held and renewed annually</dd>
+          </div>
+          <div class="legal-item">
+            <dt>Engagement Terms</dt>
+            <dd>Signed letter of engagement issued before work begins — no hidden fees</dd>
+          </div>
+        </dl>
       </div>
     </section>
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section">
-      <div class="container contact-grid">
-        <div>
-          <span class="eyebrow">Contact us</span>
-          <h2>Expand Your Practice Capacity Today!</h2>
-          <h3>How It Works</h3>
-          <p>1.Schedule a quick B2B alignment call<br>
-2. Scope out your practice’s backlog or monthly workflow needs<br>
-3. Establish a secure, white-label workflow or software access path<br>
-4. We process data entry, VAT preparation, and payroll remotely<br>
-5. Your senior team receives pristine, reconciled files ready for review</p>
-          
-          
-          <!-- Modern Corporate Info Blocks -->
-          <div style="margin-top: 40px; border-top: 1px solid var(--color-ledger-line); padding-top: 32px; display: grid; gap: 24px;">
-            <div>
-              <span style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-rust); display: block; margin-bottom: 4px;">Email</span>
-              <a href="mailto:info@solobooks.ie" style="font-size: 1.15rem; font-weight: 700; color: var(--color-ink); text-decoration: none;">info@solobooks.ie</a>
-            </div>
-            <div>
-              <span style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-rust); display: block; margin-bottom: 4px;">Phone</span>
-              <!-- Remember to update placeholder number digits -->
-              <a href="tel:+3538XXXXXXXX" style="font-size: 1.15rem; font-weight: 700; color: var(--color-ink); text-decoration: none;">+353 (0)8X XXX XXXX</a>
-            </div>
-            <div>
-              <span style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-rust); display: block; margin-bottom: 4px;">Location</span>
-              <span style="font-size: 1.15rem; font-weight: 700; color: var(--color-ink);">Dublin, Ireland</span>
-            </div>
-          </div>
-        </div>
 
-        <form class="contact-form" id="contact-form">
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div class="contact-text">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Free 30-minute consultation — no commitment</h2>
+          <p>
+            Tell us a little about your business and we'll come back to you within one working day.
+            Whether you're a sole trader just starting out or a Ltd company that needs to get on top
+            of things — we'll figure out the right fit together.
+          </p>
+          <div class="contact-checklist">
+            <p>✅ Sole trader or Ltd company</p>
+            <p>✅ Based anywhere in Ireland</p>
+            <p>✅ New business or switching bookkeeper</p>
+          </div>
+          <div class="contact-mascot" aria-hidden="true">👋</div>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
           <div class="form-row">
-            <label for="name">Company Name / Trade Identity</label>
-            <input type="text" id="name" required placeholder="e.g., Jane Doe (Freelancer) / Apex Systems Ltd">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required placeholder="e.g. Siobhán Murphy">
           </div>
           <div class="form-row">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" required placeholder="name@domain.com">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.ie">
           </div>
           <div class="form-row">
-            <label for="message">Your Requirments From Us</label>
-            <textarea id="message" rows="5" required placeholder="Tell me briefly about your business setup, if you need a software setup, or your current payroll/VAT bottlenecks..."></textarea>
+            <label for="biz-type">Are you a…</label>
+            <select id="biz-type" name="biz-type">
+              <option value="">Select one</option>
+              <option value="sole-trader">Sole trader</option>
+              <option value="limited-company">Small Irish Ltd company</option>
+              <option value="contractor">Contractor / Freelancer</option>
+              <option value="other">Other</option>
+            </select>
           </div>
-          <button type="submit" class="btn btn-primary">Submit Profile</button>
-          <div class="form-status" id="form-status"></div>
+          <div class="form-row">
+            <label for="message">What do you need help with?</label>
+            <textarea id="message" name="message" rows="4" required placeholder="e.g. VAT returns, payroll, just getting started..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-status" id="form-status" role="status"></p>
         </form>
       </div>
     </section>
+
   </main>
 
-  <!-- CORPORATE FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; Solo Books.  All rights reserved.</p>
-      <p class="footer-sub">Regulated by the Institute of Certified Bookkeepers (ICB) to Level 3 Professional Standards. Operations based out of Dublin, Ireland. Delivering pristine, cloud-native day-to-day bookkeeping, software architecture setups, ROS-ready payroll, and bi-monthly VAT3 preparation exclusively for corporate small entities, SMEs, and individual professionals ahead of final financial filings.</p>
+      <img src="logo.jpeg" alt="Ledgerly" class="footer-logo">
+      <p>&copy; <span id="year"></span> Ledgerly Bookkeeping. ICB Level 3 Certified. Based in Ireland.</p>
+      <p class="footer-sub">Bookkeeping services are subject to a signed letter of engagement. Ledgerly is not an accountancy firm and does not provide tax advice, legal advice, or act as a tax agent. Year-end tax filings should be completed by a qualified accountant or tax agent.</p>
     </div>
   </footer>
 
-  <script>
-    // Automate current system year rendering inside footer
-    document.write(`<span style="display:none;" id="year-cache">${new Date().getFullYear()}</span>`);
-    const yearPlaceholder = document.querySelector('.site-footer p');
-    if (yearPlaceholder) {
-      yearPlaceholder.innerHTML = `&copy; ${new Date().getFullYear()} Solo Books Bookkeeping. All rights reserved.`;
-    }
-  </script>
-  <script>
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('.nav');
-
-      navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('is-active');
-        navMenu.classList.toggle('is-open');
-      });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
