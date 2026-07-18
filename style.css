@@ -1,654 +1,607 @@
-/* ==========================================================================
-   PwC Corporate Tech Framework Tokens - Updated Navy & Orange Palette
-   ========================================================================== */
+/* ===========================
+   Tokens — Ledgerly Brand
+=========================== */
 :root {
-  /* Updated Elite Corporate Navy & Orange Palette */
-  --color-paper: #ffffff;          /* Pure stark white content canvas */
-  --color-ink: #0f2240;            /* Premium Institutional Navy Blue from your new logo */
-  --color-ledger-green: #f26522;   /* PwC-style Vibrant Orange from your logo */
-  --color-ledger-line: #e2e5e8;    /* Razor-thin structural layout lines */
-  --color-rust: #f26522;           /* Accents and micro-interactions */
-  --color-cream-card: #f8f9fa;     /* Corporate warm light gray for card surfaces */
-  --color-text-muted: #4a5568;     /* Sophisticated off-black for elite readability */
+  --orange:     #FD3307;   /* logo orange-red — page background */
+  --orange-dark:#E52E00;   /* deeper shade for hover / footers */
+  --orange-mid: #FD3307;   /* card/section tint */
+  --white:      #FFFFFF;
+  --ink:        #FFFFFF;   /* all body text */
+  --muted:      rgba(255,255,255,0.80);
+  --line:       rgba(255,255,255,0.20);
+  --card-bg:    rgba(255,255,255,0.12);
+  --card-hover: rgba(255,255,255,0.18);
 
-  /* Elite Global Enterprise Typography */
-  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: 'SF Mono', 'JetBrains Mono', monospace;
+  --font: 'Nunito', 'Helvetica Rounded', Arial Rounded MT Bold, Arial, sans-serif;
 
-  --max-width: 1200px;             /* Extended slightly for a wider corporate presence */
-  --radius: 0px;                    /* Strict PwC rule: 100% sharp corners, zero rounded borders */
+  --max-width: 1160px;
+  --radius-sm: 8px;
+  --radius:    14px;
+  --radius-lg: 24px;
 }
 
-/* Load Inter with full weight spectrum */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-* { 
-  box-sizing: border-box; 
-  border-radius: var(--radius) !important; /* Forces total boxy nature across all components */
-}
-
-html { 
-  scroll-behavior: smooth; 
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: var(--font-body);
-  background: var(--color-paper);
-  color: var(--color-ink);
-  line-height: 1.6;
+  font-family: var(--font);
+  background: var(--orange);
+  color: var(--ink);
+  line-height: 1.65;
   font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden; /* Prevent horizontal scroll micro-bugs on mobile */
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 32px; /* Increased padding for an expensive, expansive layout feel */
+  padding: 0 24px;
 }
 
-/* ==========================================================================
-   Typography Hierarchy
-   ========================================================================== */
 h1, h2, h3 {
-  font-family: var(--font-display);
-  color: var(--color-ink);
-  line-height: 1.1;
-  margin: 0 0 0.4em;
-  letter-spacing: -0.03em; /* Tight structural kerning */
+  font-family: var(--font);
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--white);
 }
 
-h1 { 
-  font-weight: 800; 
-  font-size: clamp(2.2rem, 6vw, 4.2rem); /* Adjusted minimum clamp bounds to prevent heading spillover on narrow phones */
-}
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+h3 { font-size: 1.15rem; font-weight: 800; }
 
-h2 { 
-  font-weight: 700; 
-  font-size: clamp(1.6rem, 4vw, 2.6rem); /* Scaled down base mobile threshold */
-  border-left: 4px solid var(--color-ledger-green); /* PwC vertical structural line accent */
-  padding-left: 16px;
-}
+p { margin: 0 0 1em; color: var(--muted); }
 
-h3 { 
-  font-weight: 700; 
-  font-size: 1.3rem; 
-  letter-spacing: -0.01em;
-}
-
-p { 
-  margin: 0 0 1.2em; 
-  color: var(--color-text-muted); 
-  font-size: 1.05rem;
-  font-weight: 400; 
-}
-
-a { 
-  color: var(--color-ledger-green); 
-  text-decoration: none; 
-}
+a { color: var(--white); text-decoration: none; }
 
 .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-ink); /* Clean corporate dark look */
-  margin: 0 0 1rem;
-  display: block;
+  color: rgba(255,255,255,0.65);
+  margin: 0 0 0.6em;
 }
 
-/* ==========================================================================
-   Navigation Bar Header & Dual Colour Identity Fix
-   ========================================================================== */
+/* ===========================
+   Header
+=========================== */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100; /* Bumped to step completely clear of interactive map layers or system widgets */
-  background: #ffffff;
-  border-bottom: 2px solid var(--color-ink); /* Authoritative thick baseline divider */
+  z-index: 50;
+  background: var(--orange);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 72px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-.navbar-logo {
-  height: 30px;
+.brand-logo {
+  height: 52px;
   width: auto;
   display: block;
-}
-
-.brand-name {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: var(--color-ink); /* Holds "solo" as dark navy token */
-  letter-spacing: -0.02em;
-  text-transform: uppercase; /* Sharp corporate identity alignment */
-}
-
-.brand-accent {
-  color: var(--color-ledger-green); /* Forces "books" to remain logo brand orange */
+  mix-blend-mode: multiply;
+  /* blend the JPEG white corners into the orange background */
 }
 
 .nav {
   display: flex;
-  gap: 40px;
+  gap: 8px;
+  align-items: center;
 }
 
 .nav a {
-  color: var(--color-ink);
+  color: rgba(255,255,255,0.90);
   font-size: 0.95rem;
-  font-weight: 600;
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 8px 0;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
 }
 
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 3px;
-  background: var(--color-rust);
-  transform: scaleX(0);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav a:hover::after,
-.nav a:focus-visible::after {
-  transform: scaleX(1);
+.nav a:hover,
+.nav a:focus-visible {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.30);
+  color: var(--white);
 }
 
 .nav-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 4px;
+  gap: 5px;
   width: 40px;
   height: 40px;
-  background: none;
-  border: 1px solid var(--color-ink);
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.30);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  padding: 0;
 }
 
 .nav-toggle span {
   display: block;
-  height: 2px;
-  width: 20px;
-  background: var(--color-ink);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  height: 2.5px;
+  background: var(--white);
+  margin: 0 8px;
+  border-radius: 2px;
 }
 
-/* Open states to transform menu bar into an 'X' close indicator via JS utility class */
-.nav-toggle.is-active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav-toggle.is-active span:nth-child(2) { opacity: 0; }
-.nav-toggle.is-active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-/* ==========================================================================
-   Buttons (Sharp Box Nature)
-   ========================================================================== */
+/* ===========================
+   Buttons
+=========================== */
 .btn {
   display: inline-block;
-  padding: 1rem 2.2rem;
-  font-weight: 700;
-  font-size: 0.9rem;
-  border: 2px solid var(--color-ink);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  padding: 0.85em 1.8em;
+  border-radius: 999px;
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 1rem;
+  border: 2.5px solid transparent;
   cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.12s;
   text-align: center;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.btn:active { transform: scale(0.97); }
 
 .btn-primary {
-  background: var(--color-ink);
-  color: #ffffff;
+  background: var(--white);
+  color: var(--orange);
+  border-color: var(--white);
 }
 
-.btn-primary:hover { 
-  background: var(--color-ledger-green); 
-  border-color: var(--color-ledger-green);
-  color: #ffffff;
+.btn-primary:hover {
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(255,255,255,0.88);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--color-ink);
-  border-color: var(--color-ink);
-  margin-left: 16px;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.60);
+  margin-left: 12px;
 }
 
 .btn-ghost:hover {
-  background: var(--color-ink);
-  color: #ffffff;
+  background: rgba(255,255,255,0.15);
+  border-color: var(--white);
 }
 
-/* ==========================================================================
-   Hero Block Layout
-   ========================================================================== */
+/* ===========================
+   Hero
+=========================== */
 .hero {
-  padding: 120px 0 80px;
-  background: var(--color-paper);
+  padding: 80px 0 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-inner {
-  max-width: 800px;
+.hero-blob {
+  position: absolute;
+  top: -120px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
+  pointer-events: none;
 }
+
+.hero-inner { max-width: 680px; position: relative; }
 
 .hero-lead {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  max-width: 640px;
-  color: var(--color-text-muted);
-  margin-top: 1.5em;
+  font-size: 1.1rem;
+  max-width: 540px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
 }
 
-.hero-actions { 
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 2.5em; 
-}
+.hero-actions { margin-top: 2em; }
 
+/* Ledger preview */
 .hero-ledger {
-  margin: 80px auto 0;
-  max-width: var(--max-width);
-  display: grid;
-  gap: 1px;
-  border: 1px solid var(--color-ledger-line);
-  background: var(--color-ledger-line);
-  box-shadow: none; /* Corporate flats rule over shadow gradients */
+  margin-top: 56px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  background: rgba(0,0,0,0.10);
+  box-shadow: 0 -4px 32px rgba(0,0,0,0.15);
 }
 
 .ledger-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  background: var(--color-cream-card);
-  padding: 20px 32px;
-  font-family: var(--font-mono);
+  padding: 16px 24px;
   font-size: 0.9rem;
-  color: var(--color-ink);
+  font-weight: 700;
+  color: var(--white);
+  border-bottom: 1px solid var(--line);
+  background: rgba(0,0,0,0.08);
+  transition: background 0.15s;
 }
+
+.ledger-row:last-child { border-bottom: none; }
+.ledger-row:hover { background: rgba(0,0,0,0.14); }
 
 .status {
-  font-size: 0.75rem;
-  padding: 6px 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  border: 1px solid transparent;
-  white-space: nowrap;
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
-.status-done { background: #e6f7ed; color: #1f7a42; border-color: rgba(31,122,66,0.2); }
-.status-pending { background: #fff3ed; color: var(--color-rust); border-color: rgba(242,101,34,0.2); }
-.status-progress { background: #f1f3f5; color: #495057; border-color: rgba(73,80,87,0.2); }
+.status-done     { background: rgba(255,255,255,0.22); color: var(--white); }
+.status-pending  { background: rgba(0,0,0,0.20);       color: rgba(255,255,255,0.90); }
+.status-progress { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.80); }
 
-/* ==========================================================================
-   Content Grid Sections
-   ========================================================================== */
+/* ===========================
+   Sections
+=========================== */
 .section {
-  padding: 100px 0;
-  border-bottom: 1px solid var(--color-ledger-line);
+  padding: 88px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .section:last-of-type { border-bottom: none; }
 
-/* About Section modification */
+/* Alternate section tint */
+.about, .legal, .who, .services, .contact { background: transparent; }
+
+/* ===========================
+   About
+=========================== */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
   align-items: start;
 }
 
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Enables seamless responsive downscaling before hitting block breakpoint rules */
-  gap: 1px;
-  background: var(--color-ledger-line); /* Clean architectural cross-grid line split */
-  border: 1px solid var(--color-ledger-line);
-}
+.about-stats { display: grid; gap: 20px; }
 
 .stat {
-  padding: 32px;
-  background: var(--color-paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  background: var(--card-bg);
+  border-left: 4px solid rgba(255,255,255,0.50);
 }
 
 .stat-number {
   display: block;
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--color-ledger-green);
-  letter-spacing: -0.02em;
-  margin-bottom: 6px;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
 }
 
 .stat-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-ink);
-  font-weight: 600;
+  color: rgba(255,255,255,0.65);
 }
 
-/* Services Grid Framework */
-.service-grid {
-  margin-top: 64px;
+/* ===========================
+   Who We Help
+=========================== */
+.who-grid {
+  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.service-card {
-  background: var(--color-cream-card);
-  border: 1px solid var(--color-ledger-line);
-  padding: 40px 32px;
-  border-top: 4px solid var(--color-ink); /* PwC style bold block card cap */
-  transition: all 0.25s ease;
-}
-
-.service-card:hover {
-  background: #ffffff;
-  border-top-color: var(--color-ledger-green);
-  border-color: var(--color-ink);
-}
-
-.service-card h3 { margin-bottom: 0.6em; }
-.service-card p { margin: 0; font-size: 1rem; color: var(--color-text-muted); }
-
-/* ==========================================================================
-   Legal & Compliance Section Layout (Enhanced)
-   ========================================================================== */
-.legal-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.legal-header-block {
-  max-width: 480px;
-}
-
-.legal-framework-cards {
-  display: grid;
   gap: 24px;
 }
 
-.compliance-card {
-  background: var(--color-paper);
-  border: 1px solid var(--color-ledger-line);
-  padding: 32px;
-  position: relative;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+.who-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  border-top: 4px solid rgba(255,255,255,0.50);
+  transition: background 0.2s, transform 0.2s;
 }
 
-.compliance-card:hover {
-  border-color: var(--color-ink);
-  background-color: var(--color-cream-card);
+.who-card:hover {
+  background: var(--card-hover);
+  transform: translateY(-3px);
 }
 
-.compliance-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed var(--color-ledger-line);
+.who-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  line-height: 1;
 }
 
-.compliance-tag {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  background: var(--color-ink);
-  color: #ffffff;
-  padding: 2px 8px;
-  text-transform: uppercase;
-}
+.who-card h3 { color: var(--white); margin-bottom: 0.5em; }
+.who-card p  { font-size: 0.95rem; color: var(--muted); margin-bottom: 1em; }
 
-.compliance-status {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--color-ledger-green);
-  letter-spacing: 0.05em;
-}
-
-.compliance-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--color-ink);
-}
-
-.compliance-card p {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* Contact Block Layout */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-}
-
-.contact-form {
-  display: grid;
-  gap: 24px;
-}
-
-.form-row {
+.who-list {
+  margin: 0; padding: 0;
+  list-style: none;
   display: grid;
   gap: 8px;
 }
 
-.form-row label {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
+.who-list li {
+  font-size: 0.88rem;
   font-weight: 700;
+  color: rgba(255,255,255,0.90);
+  padding-left: 1.4em;
+  position: relative;
+}
+
+.who-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--white);
+  font-weight: 900;
+}
+
+/* ===========================
+   Services
+=========================== */
+.service-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.service-card:hover {
+  background: var(--card-hover);
+  transform: translateY(-3px);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.service-card h3 { color: var(--white); margin-bottom: 0.5em; }
+.service-card p  { margin: 0; font-size: 0.95rem; color: var(--muted); }
+
+/* ===========================
+   Legal
+=========================== */
+.legal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.legal-list { margin: 0; display: grid; gap: 0; }
+
+.legal-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-item:last-child { border-bottom: none; }
+
+.legal-list dt {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-ink);
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 4px;
+}
+
+.legal-list dd {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* ===========================
+   Contact
+=========================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-checklist {
+  margin: 20px 0 0;
+  display: grid;
+  gap: 6px;
+}
+
+.contact-checklist p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.contact-mascot {
+  font-size: 4rem;
+  margin-top: 28px;
+  animation: wave 2.2s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0%,100% { transform: rotate(0deg); }
+  20%      { transform: rotate(18deg); }
+  40%      { transform: rotate(-8deg); }
+  60%      { transform: rotate(14deg); }
+  80%      { transform: rotate(-4deg); }
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+  background: rgba(0,0,0,0.12);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+}
+
+.form-row { display: grid; gap: 6px; }
+
+.form-row label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
 }
 
 .form-row input,
-.form-row textarea {
-  font-family: var(--font-body);
+.form-row textarea,
+.form-row select {
+  font-family: var(--font);
   font-size: 1rem;
-  padding: 16px;
-  border: 1px solid var(--color-ink); /* Authoritative corporate border inputs */
-  background: #ffffff;
-  color: var(--color-ink);
-  width: 100%; /* Prevents text elements bursting outside card layout dimensions on narrow touch monitors */
-  transition: all 0.2s ease;
+  font-weight: 600;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  transition: border-color 0.18s, background 0.18s;
 }
 
 .form-row input:focus,
-.form-row textarea:focus {
+.form-row textarea:focus,
+.form-row select:focus {
   outline: none;
-  border-color: var(--color-ledger-green);
-  box-shadow: inset 0 0 0 1px var(--color-ledger-green);
+  border-color: rgba(255,255,255,0.70);
+  background: rgba(255,255,255,0.18);
 }
 
-.contact-form .btn { 
-  justify-self: start; 
-  padding: 1.2rem 3rem; 
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: rgba(255,255,255,0.40);
+  font-weight: 600;
 }
 
-/* ==========================================================================
-   Footer Section (Elite Dark PwC Presence)
-   ========================================================================== */
+.form-row select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+
+.form-row select option { background: rgba(0,0,0,0.10); color: var(--white); }
+
+.contact-form .btn { width: 100%; }
+
+.form-status {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.90);
+  min-height: 1.4em;
+  text-align: center;
+}
+
+/* ===========================
+   Footer
+=========================== */
 .site-footer {
-  padding: 64px 0;
-  background: var(--color-ink); /* Full contrasting dark banner anchor layout */
-  color: #ffffff;
-  border-top: 4px solid var(--color-ledger-green);
+  background: rgba(0,0,0,0.10);
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
 }
 
-.footer-inner p {
-  font-size: 0.9rem;
-  margin: 0 0 0.8em;
-  color: #a0aab5;
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
 }
 
-.footer-sub { 
-  color: #6c7a8a !important; 
-  font-style: normal;
-  border-top: 1px solid #2e353d;
-  padding-top: 24px;
-  margin-top: 24px !important;
-  display: block;
+.footer-logo {
+  height: 44px;
+  width: auto;
+  mix-blend-mode: multiply;
 }
 
-/* ==========================================================================
-   Responsive Viewports
-   ========================================================================== */
-@media (max-width: 960px) {
-  .container {
-    padding: 0 24px; /* Slightly tighter container gutters on tablet screens */
-  }
-  .about-grid, .legal-grid, .contact-grid {
+.site-footer p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  font-weight: 600;
+}
+
+.footer-sub {
+  font-style: italic;
+  font-size: 0.8rem !important;
+  color: rgba(255,255,255,0.40) !important;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 900px) {
+  .about-grid,
+  .legal-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
-  .service-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 24px;
-  }
-  .hero {
-    padding: 80px 0 60px; /* Reduced vertical padding block space on small interfaces */
-  }
+
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .who-grid     { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 640px) {
-  .nav-toggle { 
-    display: flex; /* Activate hamburger trigger */
-  }
+@media (max-width: 600px) {
+  .nav        { display: none; }
+  .nav-toggle { display: flex; }
 
-  /* Structural transformation to morph the navbar link strip into an authoritative vertical dropdown */
-  .nav { 
-    display: none; 
+  .site-header.menu-open .nav {
+    display: flex;
     flex-direction: column;
     position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    padding: 24px 32px;
-    gap: 20px;
-    border-bottom: 2px solid var(--color-ink);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    top: 72px;
+    left: 0; right: 0;
+    background: rgba(0,0,0,0.10);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 24px 24px;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   }
 
-  /* Utility class to be toggled using simple javascript (`nav.classList.toggle('is-open')`) */
-  .nav.is-open {
-    display: flex;
-  }
+  .service-grid { grid-template-columns: 1fr; }
+  .who-grid     { grid-template-columns: 1fr; }
 
-  .nav a {
-    padding: 4px 0;
-    width: 100%;
-  }
+  .btn-ghost { margin-left: 0; margin-top: 12px; display: block; }
+  .hero-actions .btn { display: block; width: 100%; }
+  .hero-actions .btn-ghost { margin-left: 0; }
 
-  .service-grid { 
-    grid-template-columns: 1fr; 
-    margin-top: 40px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn {
-    width: 100%; /* Force actions to clear layout row boundaries cleanly side by side */
-  }
-
-  .btn-ghost { 
-    margin-left: 0; 
-  }
-
-  .ledger-row {
-    padding: 16px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .section {
-    padding: 60px 0;
-  }
+  .contact-form { padding: 24px; }
 }
 
-/* ==========================================================================
-   Premium Text Cycling Animation
-   ========================================================================== */
-.animated-text {
-  color: var(--color-ledger-green); /* Forces the animating words to be your brand orange */
-  position: relative;
-  white-space: nowrap;
-  border-right: 3px solid var(--color-ink); /* The typing cursor */
-  animation: 
-    typing 8s steps(4, end) infinite,
-    blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  0%, 100% { content: "ledger."; width: 100%; }
-  20% { content: "ledger."; width: 100%; }
-  25% { content: "VAT prep."; }
-  45% { content: "VAT prep."; }
-  50% { content: "payroll."; }
-  70% { content: "payroll."; }
-  75% { content: "back office."; }
-  95% { content: "back office."; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--color-ink); }
-}
-
-/* Emergency visibility override */
-@media (max-width: 640px) {
-  .nav-toggle {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 101;
-  }
-  .nav-toggle span {
-    width: 20px !important;
-    height: 2px !important;
-    background-color: #0f2240 !important; /* Updated Command Corporate Navy color */
-    display: block !important;
-  }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .contact-mascot { animation: none; }
+  * { transition: none !important; }
 }
