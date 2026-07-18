@@ -85,9 +85,14 @@ a { color: var(--white); text-decoration: none; }
   height: 52px;
   width: auto;
   display: block;
-  mix-blend-mode: multiply;
-  /* blend the JPEG white corners into the orange background */
+
+  /* FIX: remove blending */
+  mix-blend-mode: normal;
+
+  /* Optional: ensure crisp visibility */
+  image-rendering: auto;
 }
+
 
 .nav {
   display: flex;
