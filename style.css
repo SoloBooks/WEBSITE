@@ -82,16 +82,19 @@ a { color: var(--white); text-decoration: none; }
 }
 
 .brand-logo {
-  height: 52px;
+  height: 72px;        /* bigger logo */
   width: auto;
   display: block;
 
-  /* FIX: remove blending */
-  mix-blend-mode: normal;
+  mix-blend-mode: screen; 
+  /* screen = keeps blending but brightens instead of darkening */
 
-  /* Optional: ensure crisp visibility */
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.35));
+  /* subtle glow so text stays readable */
+
   image-rendering: auto;
 }
+
 
 
 .nav {
